@@ -1,0 +1,82 @@
+<% if(session){ %>
+    
+    <%- include('header1',{user:session.pseudo,statut:session.statut})-%>
+    
+  <% }else
+  { %> 
+<%- include('header1')-%>
+<% }%>
+
+<% if(message && message.succes){%>
+  <div class="ui message green inverted"><%= message.succes %></div>
+<% } %>
+
+  <h2>Modifier un article</h2>
+  
+
+
+    <div class="ui container">
+    <% if(id === undefined){%>
+    <% for(r of result){ 
+        if(r.date !=null && r.titre !=null && r.categorie !=null && r.description!=null && r.prix !=null){
+        %>
+          Posté le <%= r.date %><br/>
+          Titre :<%= r.titre %><br/>
+          Catégorie: <%= r.categorie %><br/>
+          Description : <%= r.description %><br/>
+          Prix TTC: <%= r.prix %><br/>
+          <a href="<%= page %>?id=<%= r._id %>"><button class="ui button red"><%= page %></button></a>
+          <hr/>
+      <% }
+    }
+     }else
+     { %>
+          
+        ObjectID: <%= id %><br/> 
+            
+       
+
+      
+          
+             PARTIE UPDATE POUR <%= id %><br/>
+            
+         
+
+            <form class="ui form" action="/update?id=<%= id %>" method="post"> 
+                <div class="field">
+                    <label for="titre">Titre</label>
+                    <input type="text" name="titre" id="titre" value="<%= result.titre %>">
+                </div>
+                <div class="field">
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description" value="<%= result.description %>"></textarea>
+                </div>
+                <div class="field">
+                    <label for="prix">Prix</label>
+                    <input type="text" name="prix" id="prix" value="<%= result.prix %>" maxlength="4"> €
+                </div>
+                <div class="field">
+                    <label for="categorie">Categorie</label>
+                    <select name="categorie" id="categorie">
+                        <option value="<%= result.categorie %>"><%= result.categorie %></option>
+                        <option value="entree">entree</option>
+                        <option value="plat">plat</option>
+                        <option value="dessert">dessert</option>
+                        <option value="boisson">boisson</option>
+                        <option value="menu">menu</option>
+                    </select>
+                </div>
+
+            <button class="ui button red" type="submit">Editer cet article</button>
+            </form>
+            <hr/>
+        
+
+        <% } %>
+     
+    </div>
+ 
+
+
+
+<%- include footer -%>

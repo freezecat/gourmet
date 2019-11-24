@@ -1,0 +1,76 @@
+
+<% if(session){ %>
+    
+    <%- include('header1',{user:session.pseudo,statut:session.statut})-%>
+    
+  <% }else
+  { %> 
+<%- include('header1')-%>
+<% }%>
+   <div class="ui container">
+       <div class="ui three column grid">
+
+           <div class="column">
+               <div class="ui fluid card">
+                   <div class="image">
+                       <img src="https://cdn.pixabay.com/photo/2017/07/09/18/29/salad-2487775__340.jpg" alt="no">
+                   </div>
+                   <div class="content">
+                       <a class="header" href="/carte?produit=entree">Entrées</a>
+                       Image par<a href="https://pixabay.com/fr/users/pixel2013-2364555/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2487775">S. Hermann &amp; F. Richter</a> de <a href="https://pixabay.com/fr/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2487775">Pixabay</a>
+                   </div>
+               </div>
+           </div>
+
+           <div class="column">
+                <div class="ui fluid card">
+                    <div class="image">
+                        <img src="https://cdn.pixabay.com/photo/2013/02/21/19/06/beef-84534__340.jpg" alt="no">
+                    </div>
+                    <div class="content">
+                        <a class="header" href="/carte?produit=plat">Plats</a>
+                        Image par<a href="https://pixabay.com/fr/users/PublicDomainPictures-14/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=84534">PublicDomainPictures</a> de <a href="https://pixabay.com/fr/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=84534">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                    <div class="ui fluid card">
+                        <div class="image">
+                            <img src="https://cdn.pixabay.com/photo/2019/04/26/09/21/dessert-4157098__340.jpg" alt="no">
+                        </div>
+                        <div class="content">
+                            <a class="header" href="/carte?produit=dessert">Desserts</a>
+                            Image par<a href="https://pixabay.com/fr/users/AnanaSplit-3881514/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4157098">Marion Parmentier</a> de <a href="https://pixabay.com/fr/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4157098">Pixabay</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                        <div class="ui fluid card">
+                            <div class="image">
+                                <img src="https://cdn.pixabay.com/photo/2018/10/25/08/55/apple-3771947__340.jpg" alt="no">
+                            </div>
+                            <div class="content">
+                                <a class="header" href="/carte?produit=boisson">Boissons</a>
+                                Image par<a href="https://pixabay.com/fr/users/rawpixel-4283981/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3771947">rawpixel</a> de <a href="https://pixabay.com/fr/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3771947">Pixabay</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="https://cdn.pixabay.com/photo/2012/04/14/15/37/cheeseburger-34314__340.png" alt="no">
+                                </div>
+                                <div class="content">
+                                    <a class="header" href="/carte?produit=menu">Menus à la carte</a>
+                                    Image par<a href="https://pixabay.com/fr/users/Clker-Free-Vector-Images-3736/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=34314">Clker-Free-Vector-Images</a> de <a href="https://pixabay.com/fr/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=34314">Pixabay</a>
+                                </div>
+                            </div>
+                        </div>
+
+       </div>
+   </div>
+
+<%- include footer -%>

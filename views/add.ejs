@@ -1,0 +1,47 @@
+<% if(session){ %>
+    
+    <%- include('header1',{user:session.pseudo,statut:session.statut})-%>
+    
+  <% }else
+  { %> 
+<%- include('header1')-%>
+<% }%>
+
+<% if(message && message.succes){
+    %>
+    <div class="ui message green inverted"><%= message.succes %></div>
+    <%
+}
+    %>
+<div class="ui container">
+   <h2>Ajouter un article</h2>
+     <form action="/add" method="post" class="ui form">
+        <div class="field">
+            <label for="titre">Titre</label>
+            <input type="text" name="titre" id="titre" placeholder="titre">
+        </div>
+        <div class="field">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" placeholder="description..."></textarea>
+        </div>
+        <div class="field">
+            <label for="prix">Prix</label>
+            <input type="text" name="prix" id="prix" placeholder="prix" maxlength="4"> €
+        </div>
+        <div class="field">
+            <label for="categorie">Categorie</label>
+            <select name="categorie" id="categorie">
+                <option value="entree">entree</option>
+                <option value="plat">plat</option>
+                <option value="dessert">dessert</option>
+                <option value="boisson">boisson</option>
+                <option value="menu">menu</option>
+            </select>
+        </div>
+
+        <button class="ui button green" type="submit"><i class="edit outline icon"></i> Ajouter à la carte</button>
+
+    </form>
+</div>
+
+<%- include footer -%>

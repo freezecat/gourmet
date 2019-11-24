@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="semantic-UI/semantic.min.css">
+    <link rel="stylesheet" href="semantic-UI/components/icon.min.css">
+    <script src="semantic-UI/semantic.min.js"></script>
+
+  
+ 
+</head>
+<body>
+        <div class="ui pointing menu blue inverted">
+                <a class="active item" href="/">
+                  Home
+                </a>
+                <% 
+
+                if(user!= undefined){
+                  
+                  %>
+                    <a class="item" href="/account?user=<%= user %>">
+                        <%= user %>
+                      </a>
+                      <% if(statut != undefined && statut === 'admin'){  %>
+                        <a class="item" href="/add">
+                           Ajouter un article
+                        </a>
+                        <a class="item" href="/update">
+                          Modifier un article
+                      </a>
+                        <a class="item" href="/delete">
+                           Supprimer un article
+                       </a>
+                        <% } %> 
+                      <a class="item" href="/logout">
+                        Logout
+                      </a>
+                <% 
+              }else{ %>
+                <a class="item" href="/login">
+                  Login
+                </a>
+                <a class="item" href="/register">
+                  Register
+                </a>
+                <% }
+                %>
+                <a class="item" href="/aboutme">
+                        <div class="ui horizontal list">
+                                <div class="item">
+                                    <img class="ui mini circular image" src="https://www.gravatar.com/avatar/2a826009d5e157b4acb78cfed8fa312c">
+                                    <div class="content">
+                                        <div class="ui sub header">About me</div>
+                                        
+                                    </div>
+                                </div>
+                            
+                            </div>
+                </a>
+
+                <div class="right menu">
+                  <div class="item">
+                    <div class="ui white inverted icon input">
+                      <input type="text" class="" placeholder="Search...">
+                      <i class="search link icon"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ui segment">
+                  <% if(user != undefined){
+                     %>
+                    <p>BIENVENUE <%= user %></p>
+                  <%
+                   
+                   }else
+                  { %>
+                   <p> BIENVENUE VISITEUR</p>
+                   <% } %>
+              </div>
+            
+   
+    
+    

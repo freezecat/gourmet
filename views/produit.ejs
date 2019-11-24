@@ -1,0 +1,87 @@
+
+<% if(session){ %>
+    
+    <%- include('header1',{user:session.pseudo,statut:session.statut})-%>
+    
+  <% }else
+  { %> 
+  <%- include('header1')-%>
+  <% }%>
+
+  <% if(message && message.error){%>
+    <div class="ui message red inverted"><%= message.error %></div>
+<% } %>
+<% if(message && message.succes){%>
+    <div class="ui message green inverted"><%= message.succes %></div>
+<% } %>
+   
+    <h2><%= result.titre %></h2>
+    <div class="ui container">
+      Posté le <%= result.date %> <br>
+      <div>Description:<br/>
+        <%= result.description %>
+       </div>
+       Prix: <%= result.prix %> €<br>
+       Catégorie: <a href="carte?produit=<%= result.categorie %>"><button class="ui button blue"><%= result.categorie %></button></a>
+     </div><br/>
+     <form class="ui form" action="/produit?post=favoris&&id=<%= id %>" method="post">
+      <button class="ui button green" type="submit">Ajouter comme favoris</button>
+    </form>
+    
+    <h2>Poster un commentaire</h2>
+    <form class="ui form" action="/produit?post=comment&&id=<%= id %>" method="post">
+      <div class="field">
+        <label for="commentaire">Commentaire</label>
+            <textarea type="text" name="commentaire" id="commentaire" placeholder="Commentaire..."></textarea>
+      </div>
+      <button class="ui button green" type="submit">Poster</button>
+    </form>
+
+   
+    <hr>
+    <h2>Commentaires</h2>
+    
+       <% if(comments!=null){ %>
+        <div class="ui container">
+          <% for(c of comments){ %>
+          <div>Posté par <%= c.nom %> le <%= c.date %></div>
+          <div>
+          <p>commentaire:</p>
+          <p><%= c.commentaire %></p>
+          </div><hr/>
+  
+       <% } %>
+          
+      <div class="paginator">
+        <% if(p>1){ %>
+        <a href="/produit?id=<%= id%>&&page=<%= p-1 %>" class="paginator-previous">Previous</a>
+        <% } %>
+        <script>
+          let color;
+          for(let i=1;i<6;i++)
+          {
+            
+            if(<%= p %> === i)
+          {
+            color='red';
+          }else{
+            color='blue';
+          }
+          document.write(' <a href="/produit?id=<%= id%>&&page='+i+'"class="paginator-page " style="color:'+color+';">'+i+'</a> ');
+     
+      
+      
+          }
+        </script>
+         <a href="/produit?id=<%= id%>&&page=<%= p+1 %>" class="paginator-next">Next</a>
+    </div> 
+      </div>
+  
+       <% }
+       
+       if(comments ===null){ %>
+        <p>Pas de commentaires pour cet article.</p>
+      <% } %>
+    
+     
+  <%- include footer -%>

@@ -1,0 +1,17 @@
+
+<%- include('header1',{user:session.pseudo,statut:session.statut})-%>
+Le compte personnel de <%= session.pseudo %>
+
+<h2>Liste de favoris</h2>
+
+ <% for(r of results){ %>
+  <div class="ui container">
+    Titre:<%= r.titre %><br/>
+    Catégorie:<%= r.categorie %><br/>
+    Description:<%= r.description %><br/>
+    Prix:<%= r.prix %> € <br/>
+  </div><br>
+ <% } %>
+
+
+  <%- include footer -%>

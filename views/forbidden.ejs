@@ -1,0 +1,12 @@
+<% if(session){ %>
+    
+    <%- include('header1',{user:session.pseudo,statut:session.statut})-%>
+    
+  <% }else
+  { %> 
+<%- include('header1')-%>
+<% }%>
+
+FORBIDDEN
+
+<%- include footer -%>

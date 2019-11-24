@@ -1,0 +1,31 @@
+
+<%- include('header')-%>
+
+<% if(message && message.error){%>
+    <div class="ui message red inverted"><%= message.error %></div>
+<% } %>
+<% if(message && message.succes){%>
+    <div class="ui message green inverted"><%= message.succes %></div>
+<% } %>
+
+      
+<div class="ui container">
+    <h2>Login</h2>
+    
+    <form class="ui form" action="/login" method="post">
+        <div class="field">
+            <label for="email">Email</label>
+                <input type="text" name="email" id="email" placeholder="email">
+        
+         </div>
+         <div class="field">
+            <label for="password">Mot de passe</label>
+                <input type="password" name="password" id="password" placeholder="password">
+            
+        </div>
+        <button class="ui button green" type="submit"> <i class="sign in alternate icon"></i> Login</button>
+    </form>
+    <a href="#">Mot de passe oublié?</a>
+</div>
+<!-- pour image utiliser gravatar => https://www.gravatar.com/avatar/md5(email_user)! -->
+<%- include footer -%>

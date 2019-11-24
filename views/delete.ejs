@@ -1,0 +1,54 @@
+<% if(session){ %>
+    
+    <%- include('header1',{user:session.pseudo,statut:session.statut})-%>
+    
+  <% }else
+  { %> 
+<%- include('header1')-%>
+<% }%>
+
+<% if(message && message.succes){%>
+  <div class="ui message green inverted"><%= message.succes %></div>
+<% } %>
+
+<h2>Supprimer un article</h2>
+
+
+
+  <div class="ui container">
+  <% if(id === undefined){%>
+  <% for(r of result){ 
+      if(r.date !=null && r.titre !=null && r.categorie !=null && r.description!=null && r.prix !=null){
+      %>
+        Posté le <%= r.date %><br/>
+        Titre :<%= r.titre %><br/>
+        Catégorie: <%= r.categorie %><br/>
+        Description : <%= r.description %><br/>
+        Prix TTC: <%= r.prix %><br/>
+        <a href="<%= page %>?id=<%= r._id %>"><button class="ui button red"><%= page %></button></a>
+        <hr/>
+    <% }
+  }
+   }else
+   { %>
+        
+      ObjectID: <%= id %><br/> 
+          
+          <% if(result!=undefined){ %>
+          Posté le <%= result.date %><br/>
+          Titre :<%= result.titre %><br/>
+          Catégorie: <%= result.categorie %><br/>
+          Description : <%= result.description %><br/>
+          Prix TTC: <%= result.prix %> €<br/>
+           
+          <form class="ui form" action="/delete?id=<%= id %>" method="post"> 
+          <button class="ui button red" type="submit">Supprimer cet article</button>
+          </form>
+          <hr/>
+          <% } %>
+      <% } %>
+
+
+
+
+<%- include footer -%>
