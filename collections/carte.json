@@ -1,0 +1,10 @@
+{"_id":{"$oid":"5ddaabb5b44c1a2bdc78ca6b"},"titre":"Carpaccio de boeuf","categorie":"entree","description":"Tranche de boeuf , assaisonné avec du vinaigre balsamique","date":"2019-11-24","prix":"8"}
+{"_id":{"$oid":"5ddaabe6b44c1a2bdc78ca6c"},"titre":"Spaghetti à la bolognaise","categorie":"plat","description":"Servi avec du parmesan rapée.","date":"2019-11-24","prix":"12"}
+{"_id":{"$oid":"5ddaac5bb44c1a2bdc78ca6d"},"titre":"Gratin Dauphinois","categorie":"plat","description":"Pomme de terre , à l'ail cuit au four.","date":"2019-11-24","prix":"12"}
+{"_id":{"$oid":"5ddaac93b44c1a2bdc78ca6e"},"titre":"Blanquette de veau","categorie":"plat","description":"Morceau de veau cuisiné à la crème , avec des légumes, servi avec du riz.","date":"2019-11-24","prix":"15"}
+{"_id":{"$oid":"5ddaacd2b44c1a2bdc78ca6f"},"titre":"Part de quiche lorraine","categorie":"entree","description":"Servie avec de la salade verte.","date":"2019-11-24","prix":"8"}
+{"_id":{"$oid":"5ddaacf7b44c1a2bdc78ca70"},"titre":"Moule frite","categorie":"plat","description":"Les frites sont servis à volonté.","date":"2019-11-24","prix":"14"}
+{"_id":{"$oid":"5ddaad3ab44c1a2bdc78ca71"},"titre":"Moelleux au chocolat","categorie":"dessert","description":"Gateau coeur fondant au chocolat.","date":"2019-11-24","prix":"5"}
+{"_id":{"$oid":"5ddaad85b44c1a2bdc78ca72"},"titre":"Cheesecake caramel","categorie":"dessert","description":"Gâteau au fromage blanc et caramel","date":"2019-11-24","prix":"6"}
+{"_id":{"$oid":"5ddaadbcb44c1a2bdc78ca73"},"titre":"Mojito","categorie":"boisson","description":"Boisson alcoolisé ,citron verte ,menthe ,rhum ...","date":"2019-11-24","prix":"6"}
+{"_id":{"$oid":"5ddaae04b44c1a2bdc78ca74"},"titre":"Canette de soda au choix","categorie":"boisson","description":"Coca cola , Orangina , Oasis , Fanta , Schwepp's...","date":"2019-11-24","prix":"2.5"}
